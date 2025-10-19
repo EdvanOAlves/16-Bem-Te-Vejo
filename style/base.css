@@ -18,6 +18,8 @@ body{
     width: 100vw;
     height: 100vh;
     overflow: auto;
+    background-image: url('../imgLayout/Rectangle\ 11.png');
+    background-position: 10%;
 }
 
 header{
