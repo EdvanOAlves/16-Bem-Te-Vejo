@@ -26,6 +26,8 @@ body{
     overflow: auto;
     background-image: url('../imgLayout/Rectangle\ 11.png');
     background-position: 10%;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 header{
@@ -75,5 +77,4 @@ footer{
     font-weight: 100;
 
     background-color: var(--text-backdrop);
-
 }

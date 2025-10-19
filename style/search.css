@@ -1,8 +1,17 @@
+body{
+    /* TODO: Testar se isso não quebra o landing page e aplicar no base.css*/
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 main{
     padding: 4%;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 16px;
+    flex-grow: 1;
 }
 
 main p{
@@ -39,4 +48,39 @@ input{
     font-size: 2rem;
     color: var(--primary-color);
 
+}
+
+/* Conteúdo, cards busca: */
+
+ul{
+    list-style: none;
+}
+
+.busca-lista{
+
+}
+
+.busca-card{
+    height: 187px ;
+    position: relative;
+    overflow: hidden;
+    margin: 5%;
+
+    border-radius: 11px;
+
+    box-shadow: -8px 8px 8px rgba(0, 0, 0, 0.4);
+}
+
+.busca-card img{
+    width: 100%;
+}
+
+h2{
+    position: absolute;
+    bottom: 1rem;
+    left: 2rem;
+
+    color: var(--highlight-color);
+    
+    width: 50%;
 }
