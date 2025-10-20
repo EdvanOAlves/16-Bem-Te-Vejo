@@ -53,6 +53,12 @@ header{
     color: var(--highlight-color);
 }
 
+a{
+    text-decoration: none;
+    font-style: none;
+
+}
+
 h1{
     text-shadow: -2px 2px 0px rgba(0, 0, 0);
     font-weight: 100;

@@ -2,22 +2,21 @@
 /*
 TODO:
     O carregamento é limitado a 200 itens por requisição, deixei em 48 mas é uma solução temporária,
-    estudar depois como fazer a requisição em partes menores para cobrir todo o conteúdo sem sobrecarregar
+    estudar depois como fazer a requisição em partes menores para cobrir todo o conteúdo sem sobrecarregar 
 
     Atualizar o texto da etapa que o usuário se encontra
 
     Implementar busca por pesquisa
 
-    Implementar voltar um nível
-    
-    Sub-espécie é um bicho de 7 cabeças pra resolver
+    Implementar voltar um nível na navegação de busca
+
 */
 let nivel = 0 //Contagem de páginas, quando chega em 3 está em família, exibindo a lista de espécies
 
 const buscaLista = document.getElementById('lista');
 
 async function getChildren(id){
-    const endPoint = `https://api.inaturalist.org/v1/taxa?parent_id=${id}`
+    const endPoint = `https://api.inaturalist.org/v1/taxa?parent_id=${id}&per_page=100`
     const response = await fetch(endPoint);
     const data = await response.json();
     return data;
