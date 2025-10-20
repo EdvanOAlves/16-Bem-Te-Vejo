@@ -113,6 +113,10 @@ footer{
         font-size: 48px;
     }
 
+    footer p{
+        font-size: 24px;
+    }
+
 }
 
 /* Versão Desktop */
