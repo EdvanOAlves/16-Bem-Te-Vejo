@@ -35,8 +35,6 @@ main{
 
 .busca-menu{
     overflow: auto;
-    display: grid;
-    grid-template-rows: auto 1fr;
 
 }
 
@@ -47,6 +45,11 @@ main{
 
     border-radius: 11px;
 
+    height: 187px;
+    overflow: hidden;
+
+
+    box-shadow: -8px 8px 8px rgba(0, 0, 0, 0.4);
     box-shadow: -8px 8px 8px rgba(0, 0, 0, 0.4);
 }
 

@@ -5,6 +5,14 @@
     font-family: 'Irish Grover';
 }
 
+body{
+    /* TODO: Testar se isso não quebra o landing page e aplicar no base.css*/
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 ul{
     list-style: none;
 }
