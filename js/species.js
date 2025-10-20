@@ -23,6 +23,8 @@ async function loadInfo(especie){
     const response = await fetch(endPoint);
     const info = await response.json(); 
     const birdinfo = info;
+    if (birdinfo.status == 404)
+        return false
     return birdinfo;
 }
 
@@ -46,8 +48,13 @@ async function extractData(input){
             birdData.name = wikiInfo.title;
         else
             birdData.name = inaturalistData.preferred_common_name;
-
+        
         birdData.description = wikiInfo.extract;
+        birdData.wikipedia_url = wikiInfo.content_urls.desktop.page;
+    }
+    else{
+        birdData.wikipedia_url = false
+        birdData.name = inaturalistData.name;
     }
     birdData.image_url = inaturalistData.default_photo.medium_url;
 
@@ -56,7 +63,6 @@ async function extractData(input){
     else
         birdData.status = MESSAGE_NOT_EXTINCT;
 
-    birdData.wikipedia_url = wikiInfo.content_urls.desktop.page;
     return birdData;
 }
 
@@ -76,8 +82,13 @@ async function loadPage(especie){
     birdName.textContent = birdData.name;
     birdDetails.textContent = birdData.description;
     birdStatus.textContent =birdData.status;
-    wikiLink.textContent ='Página da Wikipédia'
-    wikiLink.href = birdData.wikipedia_url;
+    if (birdData.wikipedia_url){
+        wikiLink.textContent ='Página da Wikipédia'
+        wikiLink.href = birdData.wikipedia_url;
+    }
+    else{
+        wikiLink.textContent ='Página da Wikipédia indisponível'
+    }
     wikiLink.classList.add('wiki-link');
 
     hero.appendChild(birdImg);
