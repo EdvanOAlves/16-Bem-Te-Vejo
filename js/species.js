@@ -1,22 +1,25 @@
 "use strict"
 
+const params = new URLSearchParams(window.location.search);
+const especie = params.get('especie');
+
 const hero = document.getElementById('hero-container');
 const content = document.getElementById('content-text');
 
 const MESSAGE_EXTINCT = 'Status: Extinto';
 const MESSAGE_NOT_EXTINCT = 'Status: Pode ser encontrado na natureza';
 
-async function loadData(birdName){
-    
-    const endPoint = `https://api.inaturalist.org/v1/taxa?q=${birdName}`;
+async function loadData(especie){
+    console.log('buscando especie:'+especie)
+    const endPoint = `https://api.inaturalist.org/v1/taxa?q=${especie}`;
     const response = await fetch(endPoint);
     const data = await response.json(); 
     const birdData = data.results[0];
     return birdData;
 }
 
-async function loadInfo(birdName){
-    const endPoint = `https://pt.wikipedia.org/api/rest_v1/page/summary/${birdName}`;
+async function loadInfo(especie){
+    const endPoint = `https://pt.wikipedia.org/api/rest_v1/page/summary/${especie}`;
     const response = await fetch(endPoint);
     const info = await response.json(); 
     const birdinfo = info;
@@ -32,9 +35,10 @@ async function extractData(input){
         wikipedia_url: undefined
     }
     const inaturalistData = await loadData(input);
-    const wikiInfo = await loadInfo(input);
+    const scientificName = inaturalistData.name;
+    const wikiInfo = await loadInfo(scientificName);
 
-    // console.log(inaturalistData);
+    console.log(inaturalistData);
     console.log(wikiInfo);
 
     if (wikiInfo){
@@ -53,14 +57,12 @@ async function extractData(input){
         birdData.status = MESSAGE_NOT_EXTINCT;
 
     birdData.wikipedia_url = wikiInfo.content_urls.desktop.page;
-    console.log(wikiInfo.content_urls.desktop);
     return birdData;
 }
 
-async function loadPage(){
-    const input = 'Ramphastos toco';
+async function loadPage(especie){
+    const input = especie;
     const birdData = await extractData(input);
-
 
     const birdImg = document.createElement('img');
     const birdName = document.createElement('h2');
@@ -88,4 +90,4 @@ async function loadPage(){
 }
 
 console.log('hello world!');
-loadPage();
+loadPage(especie);
