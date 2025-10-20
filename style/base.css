@@ -5,25 +5,6 @@
     font-family: 'Irish Grover';
 }
 
-body{
-    /* TODO: Testar se isso não quebra o landing page e aplicar no base.css*/
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-ul{
-    list-style: none;
-}
-
-h2{
-    color: var(--highlight-color);
-    font-size: 2.2rem;
-    font-weight: 100;
-    text-shadow: -2px  4px 4px rgba(0, 0, 0, 0.5);
-}
-
 :root {
     --primary-color: #745031;
     --primary-shaded: #58371B;
@@ -33,6 +14,12 @@ h2{
 }
 
 body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+
     background-color: var(--primary-color);
     width: 100vw;
     overflow: auto;
@@ -71,13 +58,30 @@ h1{
     font-weight: 100;
 }
 
+h2{
+    color: var(--highlight-color);
+    font-size: 2.2rem;
+    font-weight: 100;
+    text-shadow: -2px  4px 4px rgba(0, 0, 0, 0.5);
+}
+
+
 .logo{
     height: 65%;
 }
 
+
+
 main{
+    
+    flex-grow: 1;
     height: 87%;
 }
+
+ul{
+    list-style: none;
+}
+
 
 footer{
     display: flex;

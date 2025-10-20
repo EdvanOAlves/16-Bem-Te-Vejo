@@ -38,7 +38,7 @@ main{
 
 }
 
-.card-busca{
+.card{
     position: relative;
     overflow: hidden;
     margin: 5%;
@@ -53,7 +53,7 @@ main{
     box-shadow: -8px 8px 8px rgba(0, 0, 0, 0.4);
 }
 
-.card-busca h2{
+.card h2{
     position: absolute;
     bottom: 1rem;
     left: 2rem;

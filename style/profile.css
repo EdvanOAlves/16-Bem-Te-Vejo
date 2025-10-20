@@ -1,5 +1,5 @@
 body{
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .hero{
@@ -43,5 +43,9 @@ body{
 
 .content p{
     line-height: 100%;
+    font-size: 1.5rem;
+}
+
+.wiki-link{
     font-size: 1.5rem;
 }
