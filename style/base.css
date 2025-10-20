@@ -100,3 +100,19 @@ footer{
 
     background-color: var(--text-backdrop);
 }
+
+/* RESPONSIVIDADE */
+
+/* Versão Tablet */
+@media (min-width:744px){
+    header{
+        height: 10%;
+    }
+
+    h1{
+        font-size: 48px;
+    }
+
+}
+
+/* Versão Desktop */
