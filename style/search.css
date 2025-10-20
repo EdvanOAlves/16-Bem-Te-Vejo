@@ -140,3 +140,40 @@ h2{
 }
 
 /* Versão Desktop */
+
+@media (min-width:1000px){
+
+    .busca-lista{
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        place-content: space-around;
+        
+    }
+
+    .busca-card{
+        width: 30%;
+        height:400px
+    }
+
+    .busca-card img{
+        height: 100%;
+        object-fit: cover;
+
+    }
+
+    button{
+        width: 294px;
+        height: 100px;
+        border-width: 4px;
+        font-size: 48px;
+    }
+
+    .busca-card h2{
+    top: 1rem;
+    left: 10%;
+    transform: translate(0);
+    padding: 0;
+
+    }
+}

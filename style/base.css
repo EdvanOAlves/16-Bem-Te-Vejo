@@ -120,3 +120,14 @@ footer{
 }
 
 /* Versão Desktop */
+
+@media (min-width:1000px){
+    main{
+        display: flex;
+        flex-direction: row;
+
+    }
+
+
+
+}

@@ -68,3 +68,49 @@ body{
 }
 
 /* Versão Desktop */
+@media (min-width:1000px){
+
+    main{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        place-content: space-between;
+
+    }
+
+    .hero{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 40%;
+    }
+    .hero img{
+        /* TODO: Resolver a perda de qualidade */
+        width: 40vh;
+        height: 40vh;
+        border-radius: 100%;
+    }
+    .hero h2{
+        position:static;
+        width: 100%;
+        padding: 0;
+        text-align: center;
+    }
+
+    .content{
+        max-width: 65%;
+    }
+    .content p{
+        font-size: 32px;
+        background-color: var(--highlight-color);
+        padding: 1.5rem;
+        border-radius: 45px;
+        overflow: visible;
+    }
+    .content a{
+        font-size: 32px;
+        background-color: var(--highlight-color);
+        padding: 1.5rem;
+        border-radius: 45px;
+    }
+}
