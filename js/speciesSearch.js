@@ -14,6 +14,12 @@ TODO:
 let nivel = 0 //Contagem de páginas, quando chega em 3 está em família, exibindo a lista de espécies
 
 const buscaLista = document.getElementById('lista');
+let rota = [];
+let enderecoAtual;
+
+const buttonVoltar = document.getElementById('returnButton');
+buttonVoltar.addEventListener('click', () => returnPage())
+
 
 async function getChildren(id){
     const endPoint = `https://api.inaturalist.org/v1/taxa?parent_id=${id}&per_page=100`
@@ -30,7 +36,14 @@ function carregarCard(item){
     const id = item.id;
 
     itemNome.textContent = item.name;
-    itemImg.src = item.default_photo.medium_url;
+
+    if (item.default_photo){
+        itemImg.src = item.default_photo.medium_url;
+    }
+    else{ 
+        itemImg.alt = 'Falha no carregamento de imagem';
+    }
+
     itemCard.classList.add('busca-card');
     
     itemCard.appendChild(itemNome);
@@ -38,7 +51,6 @@ function carregarCard(item){
     
 
     buscaLista.appendChild(itemCard);
-    console.log(item);
     
     if (nivel >= 3 && item.rank == 'species'){   // Caso estejamos lidando com espécie
     itemCard.addEventListener('click', () => window.location.href = `info-ave.html?especie=${item.name}`); 
@@ -54,11 +66,39 @@ function carregarCard(item){
 async function loadChosenPage(id){
     const pageData = await getChildren(id);
     buscaLista.replaceChildren();
-    
-    console.log(nivel)
+
     pageData.results.forEach(carregarCard);
+
+    if(enderecoAtual)
+        rota.push(enderecoAtual);
+    enderecoAtual = id;
+    if (rota.length >= 1){
+        buttonVoltar.classList.remove('hidden')
+    }
+    
     
     nivel+=1;
+}
+
+async function loadReturningPage(id){
+    const pageData = await getChildren(id);
+    buscaLista.replaceChildren();
+
+    pageData.results.forEach(carregarCard);
+
+    nivel--;
+    console.log('nivel é '+ nivel)
+    if (nivel == 1){
+        buttonVoltar.classList.add('hidden');
+    }
+}
+
+
+
+async function returnPage(){
+    let id = rota.pop();
+    enderecoAtual = id;
+    loadReturningPage(id);
 }
 
 console.log('hello world!');

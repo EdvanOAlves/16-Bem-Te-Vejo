@@ -10,7 +10,6 @@ const MESSAGE_EXTINCT = 'Status: Extinto';
 const MESSAGE_NOT_EXTINCT = 'Status: Pode ser encontrado na natureza';
 
 async function loadData(especie){
-    console.log('buscando especie:'+especie)
     const endPoint = `https://api.inaturalist.org/v1/taxa?q=${especie}`;
     const response = await fetch(endPoint);
     const data = await response.json(); 

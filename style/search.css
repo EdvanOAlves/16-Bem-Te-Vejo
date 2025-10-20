@@ -44,6 +44,18 @@ input{
 
 }
 
+button{
+    position: sticky;
+    pointer-events: auto;
+    bottom: 25px;
+    width: 150px;
+    height: 50px;
+    border-radius: 45px;
+    border-color: var(--primary-color);
+    background-color: var(--secondary-color);
+    font-size: 1rem;
+}
+
 /* Conteúdo, cards busca: */
 
 .busca-lista{
@@ -75,4 +87,13 @@ h2{
     color: var(--highlight-color);
     
     width: 50%;
+}
+
+/* Classe para esconder o botão de voltar quando necessário */
+.hidden{    
+    display: none;
+}
+
+.visible{
+    display: inline-block;
 }
