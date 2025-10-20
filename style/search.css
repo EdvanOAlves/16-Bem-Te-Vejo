@@ -97,3 +97,39 @@ h2{
 .visible{
     display: inline-block;
 }
+
+/* RESPONSIVIDADE */
+
+/* Versão Tablet */
+@media (min-width:744px){
+
+    .busca-lista{
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        place-content: space-between;
+        gap: 20px;
+        
+    }
+
+    .busca-card{
+        width: 48%;
+        height:400px
+    }
+
+    .busca-card img{
+        height: 100%;
+        object-fit: cover;
+
+    }
+
+    .busca-card h2{
+    top: 1rem;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 0;
+
+    }
+}
+
+/* Versão Desktop */
