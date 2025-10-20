@@ -88,5 +88,4 @@ async function loadPage(){
 }
 
 console.log('hello world!');
-//Teste com nome placeholder
 loadPage();
