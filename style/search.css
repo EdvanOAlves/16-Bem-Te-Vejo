@@ -123,6 +123,13 @@ h2{
 
     }
 
+    button{
+        width: 294px;
+        height: 100px;
+        border-width: 4px;
+        font-size: 48px;
+    }
+
     .busca-card h2{
     top: 1rem;
     left: 50%;

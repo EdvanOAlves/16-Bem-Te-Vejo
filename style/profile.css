@@ -49,3 +49,22 @@ body{
 .wiki-link{
     font-size: 1.5rem;
 }
+
+/* RESPONSIVIDADE */
+
+/* Versão Tablet */
+@media (min-width:744px){
+    main{
+        padding-inline: 48px;
+
+    }
+
+    .hero h2{
+        width: 100%;
+        padding-inline: 40px;
+        font-size: 64px;
+    }
+
+}
+
+/* Versão Desktop */
