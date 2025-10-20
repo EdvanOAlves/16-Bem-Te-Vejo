@@ -52,19 +52,17 @@ input{
 
 /* Conteúdo, cards busca: */
 
-ul{
-    list-style: none;
-}
-
 .busca-lista{
-
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
+
 
 .busca-card{
     height: 187px ;
     position: relative;
     overflow: hidden;
-    margin: 5%;
 
     border-radius: 11px;
 
